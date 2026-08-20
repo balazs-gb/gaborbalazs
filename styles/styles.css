@@ -124,6 +124,25 @@ body::after {
   margin-top: 50px;
   justify-content: center;
 }
+.home-div4 {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+.hobby-title {
+  display: flex;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  transition: font-weight 0.3s cubic-bezier(.42, 0, .44, 1.68);
+}
 
 .home-d1-left {
   display: flex;
