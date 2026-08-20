@@ -27,7 +27,9 @@
       <img class="work-sample" src="Images/lino1.webp" alt="work sample">
     </div>
 
+
     <main class="main">
+
       <div class="home-div1">
         <div class="home-d1-left">
           <img class="pic-me" src="Images/me.webp" alt="Picture of Gábor Balázs">
@@ -87,7 +89,7 @@
           <div class="work">
             <p class="work-title">Work</p>
             <ul class="edu-list">
-              <li>2021 -</li>
+              <li>2022 -</li>
               <li><strong>Graphic Designer, Art Director</strong></li>
               <li><strong><a href="https://diversityads.ro/" target="_blank">Diversity Advertising,</a></strong></li>
               <li><i>Cluj Napoca</i></li>
@@ -192,6 +194,14 @@
         </div>
         
       </div>
+
+      <div class="home-div4">
+        <div class="hobby-title">Hobby project:</div>
+        <div>
+          <iframe frameborder="0" src="https://itch.io/embed/4596909?border_width=0&amp;bg_color=ffffff&amp;fg_color=000000&amp;link_color=000000&amp;border_color=e5e5e5" width="550" height="165"><a href="https://balazs-g.itch.io/black-ninja-cowboy">Black Ninja Cowboy by balazs_g</a></iframe>
+        </div>
+      </div>
+
     </main>
 
   <script>
@@ -238,6 +248,7 @@
           const circleBar = new ProgressBar.Circle(`#${config.id}`, {
               color: "#5000D2",       
               strokeWidth: 8,
+              linecap: "round",
               trailWidth: 15,
               trailColor: "#F5F5F5",  
               easing: "easeInOut",
@@ -274,7 +285,8 @@
       lineConfigs.forEach((config, index) => {
           const lineBar = new ProgressBar.Line(`#${config.id}`, {
               // Your CSS sets height to 8px, so we'll use that for thickness
-              strokeWidth: 8, 
+              strokeWidth: 8,
+              linecap: "round",
               trailWidth: 8, 
               easing: 'easeInOut',
               duration: animationDuration,
