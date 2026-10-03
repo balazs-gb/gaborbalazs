@@ -9,6 +9,7 @@
     <meta name="author" content="Gábor Balázs">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/skills.css">
+    <link rel="stylesheet" href="styles/game-card.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
@@ -198,7 +199,41 @@
       <div class="home-div4">
         <div class="hobby-title">Hobby project:</div>
         <div>
-          <iframe frameborder="0" src="https://itch.io/embed/4596909?border_width=0&amp;bg_color=ffffff&amp;fg_color=000000&amp;link_color=000000&amp;border_color=e5e5e5" width="550" height="165"><a href="https://balazs-g.itch.io/black-ninja-cowboy">Black Ninja Cowboy by balazs_g</a></iframe>
+          <section class="game-card">
+            <a class="game-card__art" href="https://balazs-gb.github.io/blackninjacowboy/" aria-label="Black Ninja Cowboy — visit the game's website">
+              <img src="images/publishing materialfull-15 copy.webp" alt="Black Ninja Cowboy cover art">
+            </a>
+
+            <div class="game-card__body">
+              <div class="game-card__title-row">
+                <a class="game-card__title" href="https://balazs-gb.github.io/blackninjacowboy/">Black Ninja Cowboy</a>
+
+                <span class="game-card__platform-icons" aria-hidden="true">
+                  <!-- Windows (Microsoft Store) -->
+                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 2.3 6.5 1.4v6.1H0V2.3Zm7.3-1 8.7-1.3v7.1H7.3V1.3ZM0 8.5h6.5v6.2L0 13.7V8.5Zm7.3 0H16v7.2l-8.7-1.3V8.5Z"/></svg>
+                  <!-- Google Play -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l0 6" /><path d="M20 10l0 6" /><path d="M7 9h10v8a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-8a5 5 0 0 1 10 0" /><path d="M8 3l1 2" />  <path d="M16 3l-1 2" /><path d="M9 18l0 3" /><path d="M15 18l0 3" /></svg>
+                </span>
+              </div>
+
+              <p class="game-card__tagline">Bullet-hell, roguelike, pixel art video game.</p>
+
+              <div class="game-card__actions">
+                <a class="game-card__btn" href="https://apps.microsoft.com/detail/9PL0VPPNLCRF">
+                  <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 2.3 6.5 1.4v6.1H0V2.3Zm7.3-1 8.7-1.3v7.1H7.3V1.3ZM0 8.5h6.5v6.2L0 13.7V8.5Zm7.3 0H16v7.2l-8.7-1.3V8.5Z"/></svg>
+                  Microsoft Store
+                </a>
+                <a class="game-card__btn" href="https://play.google.com/store/apps/details?id=balazs_g.blackninjacowboy">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l0 6" /><path d="M20 10l0 6" /><path d="M7 9h10v8a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-8a5 5 0 0 1 10 0" /><path d="M8 3l1 2" />  <path d="M16 3l-1 2" /><path d="M9 18l0 3" /><path d="M15 18l0 3" /></svg>
+                  Google Play
+                </a>
+                <a class="game-card__btn" href="https://balazs-g.itch.io/black-ninja-cowboy">
+                  <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.4 2.1C2.3 1.2 3.6.7 4.9.7h6.2c1.3 0 2.6.5 3.5 1.4l.9 1c.8.8.5 2.6-.5 3.2-.5.3-1.1.5-1.7.5-.8 0-1.6-.3-2.1-.9-.5.6-1.3.9-2.1.9-.8 0-1.6-.3-2.1-.9-.5.6-1.3.9-2.1.9-.8 0-1.6-.3-2.1-.9-.6.6-1.3.9-2.1.9-.6 0-1.2-.2-1.7-.5-1-.6-1.3-2.4-.5-3.2l.9-1Zm.6 5.1c.5.2 1 .3 1.6.3.7 0 1.4-.2 2-.5.6.3 1.3.5 2 .5.7 0 1.4-.2 2-.5.6.3 1.3.5 2 .5.6 0 1.1-.1 1.6-.3l-.5 5.9c-.1 1-.9 1.8-1.9 1.8h-1.2v-3.2c0-.6-.5-1.1-1.1-1.1h-1.6c-.6 0-1.1.5-1.1 1.1v3.2H4.5c-1 0-1.8-.8-1.9-1.8l-.6-5.9Z"/></svg>
+                  Itch.io
+                </a>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
 
