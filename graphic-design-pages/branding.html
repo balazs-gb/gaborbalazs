@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Branding | GB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/graphic-d.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../Images/logo-GB.svg">
+  </head>
+  <body data-category="branding">
+    <nav class="menu">
+      <a href="../index.html">Home</a>
+      <a class="active" href="../Works.html">Works</a>
+      <a href="../Contact.html">Contact</a>
+    </nav>
+
+    <!-- Secondary menu: generated from scripts/graphic-design-data.js -->
+    <div class="graphic-d-pagination" id="category-menu"></div>
+
+    <div class="graphic-design-bg">
+      <!-- Projects: generated from scripts/graphic-design-data.js -->
+      <div class="projects-container" id="projects"></div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true" tabindex="-1">
+      <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+
+      <div class="lightbox-strip">
+        <div class="lightbox-track"></div>
+        <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Previous image">&#10094;</button>
+        <button class="lightbox-arrow lightbox-next" type="button" aria-label="Next image">&#10095;</button>
+      </div>
+
+      <div class="lightbox-caption">
+        <p class="lightbox-title"></p>
+        <p class="lightbox-subtitle"></p>
+      </div>
+
+      <div class="lightbox-controls">
+        <button class="lightbox-btn lightbox-reverse" type="button" aria-pressed="false" aria-label="Reverse direction">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4l4 4-4 4"/><path d="M3 8h18"/><path d="M7 20l-4-4 4-4"/><path d="M21 16H3"/></svg>
+          <span class="btn-label">Reverse</span>
+        </button>
+        <button class="lightbox-btn lightbox-play" type="button" aria-label="Pause scrolling">
+          <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg>
+          <span class="btn-label">Pause</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- The data file must come BEFORE the main script -->
+    <script src="../scripts/graphic-design-data.js"></script>
+    <script src="../scripts/graphic-design.js"></script>
+
+    <footer>
+      <div class="footer">
+      <p>&copy; 2026 Gábor Balázs. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
