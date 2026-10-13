@@ -18,109 +18,78 @@
         position: relative;
         font-family: Gabarito, Arial, Helvetica, sans-serif;
       }
-
+ 
+      /* ------------------------------------------------------------
+         The folders are laid out in normal flow and overlap each other
+         with a NEGATIVE margin given in % (a % margin is relative to the
+         container WIDTH). Because of that, everything - the overlap, the
+         title size, the hover lift - scales together with the folder
+         width, so phone, tablet and desktop all look the same.
+         ------------------------------------------------------------ */
       .work-folders {
-        position: relative;
         width: 100%;
         max-width: 1000px;
-        height: 1500px;
-        padding: 0 16px;
+        padding: 0 16px 40px;
         box-sizing: border-box;
-            }
+      }
+ 
       .work-folders svg {
+        display: block;
         width: 100%;
         height: auto;
       }
-      .graphic-design-folder {
-        position: absolute;
-        top: 150px;
-        transition: top 0.5s ease, filter 0.5s ease;
-        }     
-      .visual-arts-folder {
-        position: absolute;
-        top: 400px;
-        transition: top 0.5s ease, filter 0.5s ease;
-      }
-      .films-folder {
-        position: absolute;
-        top: 650px;
-        transition: top 0.5s ease, filter 0.5s ease;
-      }
+ 
+      .graphic-design-folder,
+      .visual-arts-folder,
+      .films-folder,
       .photo-folder {
-        position: absolute;
-        top: 900px;
-        transition: top 0.5s ease, filter 0.5s ease;
+        position: relative;
+        transition: transform 0.5s ease, filter 0.5s ease;
       }
-      .graphic-design-folder:hover {
-        top: 100px;
-        transition: all 0.5s ease;
-        filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.1))
+ 
+      /* top space above the first folder */
+      .graphic-design-folder {
+        margin-top: 15.5%;
       }
-      .visual-arts-folder:hover {
-        top: 350px;
-        transition: all 0.5s ease;
-        filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.15))
+ 
+      /* each following folder slides up under the previous one,
+         so that only its tab + top strip stays visible */
+      .visual-arts-folder,
+      .films-folder,
+      .photo-folder {
+        margin-top: -14%;
       }
-      .films-folder:hover {
-        top: 600px;
-        transition: all 0.5s ease;
-        filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.2))
-      }
+ 
+      /* hover: the folder lifts up (13% of its own height ~ 50px on desktop) */
+      .graphic-design-folder:hover,
+      .visual-arts-folder:hover,
+      .films-folder:hover,
       .photo-folder:hover {
-        top: 850px;
-        transition: all 0.5s ease;
-        filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.3))
+        transform: translateY(-13%);
       }
+      .graphic-design-folder:hover { filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.1)); }
+      .visual-arts-folder:hover    { filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.15)); }
+      .films-folder:hover          { filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.2)); }
+      .photo-folder:hover          { filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.3)); }
+ 
+      /* title size follows the folder width (= 3.2rem on a full desktop) */
       .work-folders-titles {
         color: white;
-        font-size: clamp(3rem, 5vw, 3.2rem);
+        font-size: calc((min(100vw, 1000px) - 32px) * 0.053);
       }
+ 
       .single-work-text {
         position: absolute;
-        top: 10px;
-        left: 20px;
+        top: 2.6%;
+        left: 2%;
         background-color: none;
-        font-size: 54px;
         font-weight: 500;
+        white-space: nowrap;
         transition: font-weight 0.3s;
       }
-
+ 
       .single-work-text:hover {
         font-weight: 700;
-      }
-
-      /* TELEFON SIZE */
-      @media (max-width: 450px) {
-        .work-folders {
-          height: auto;
-          display: flex;
-          flex-direction: column;
-          gap: 0;
-        }
-
-        .graphic-design-folder,
-        .visual-arts-folder,
-        .films-folder,
-        .photo-folder {
-          position: relative;
-          top: 40px;
-          transition: transform 0.3s ease;
-        }
-
-        .graphic-design-folder:hover,
-        .visual-arts-folder:hover,
-        .films-folder:hover,
-        .photo-folder:hover {
-          top: 0;
-          transform: translateY(-15px);
-        }
-        .single-work-text {
-          position: absolute;
-          top: 50px;
-          left: 10px;
-          text-wrap: nowrap;
-        }
-        
       }
     </style>
 
