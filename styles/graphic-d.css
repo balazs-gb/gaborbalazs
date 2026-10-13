@@ -1,3 +1,20 @@
+/* ====================================================================
+   Graphic design pages
+   Everything scales with the screen width, so the phone version looks
+   like the desktop one (only smaller, with the text kept readable).
+
+   FINE-TUNING (if the images don't sit perfectly inside the card
+   picture project-bg.png, change these 3 numbers):
+     --inset-x       gap between the card's edge and the image window (sides)
+     --inset-bottom  gap at the bottom
+     --title-top     vertical position of the title in the card's tab
+   ==================================================================== */
+
+:root {
+  /* tab font: 1.56rem on desktop, shrinks with the window */
+  --tab-font: min(1.56rem, 2vw);
+}
+
 body {
   background-color: #f4f4f4;
   margin: 0;
@@ -7,171 +24,395 @@ body {
   position: relative;
 }
 
+/* ---------- Secondary menu (tabs) ---------- */
+.graphic-d-pagination {
+  font-size: var(--tab-font);
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  text-wrap: nowrap;
+  justify-content: center;
+  gap: 1.4em;
+  margin-top: 50px;
+}
 
-      .graphic-d-pagination {
-        font-size: clamp(0.5rem, 2vw, 1.56rem);
-        font-weight: 600;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        text-wrap: nowrap;
-        justify-content: space-evenly;
-        gap: 2.2rem;
-        margin-top: 50px;
-      }
-      .graphic-d-categories a{
-        background-color: #d5d5d5;
-        color: rgb(134, 134, 134);
-        position: relative;
-        top: 0px;
-        padding: 15px;
-        padding-bottom: 40px;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border: none;
-        z-index: 0;
-        transition: all 0.5s ease;
-      }
+.graphic-d-categories a {
+  background-color: #d5d5d5;
+  color: rgb(134, 134, 134);
+  position: relative;
+  top: 0;
+  padding: 0.6em;
+  padding-bottom: 1.6em;
+  border: none;
+  border-radius: 10px 10px 0 0;
+  z-index: 0;
+  transition: all 0.5s ease;
+}
 
-      .graphic-d-categories a:hover {
-        top: -15px;
-        color: rgb(81, 81, 81);
-        background-color: #e4e4e4;
-        transition: all 0.5s ease;
-        }
+.graphic-d-categories a:hover {
+  top: -0.6em;
+  color: rgb(81, 81, 81);
+  background-color: #e4e4e4;
+}
 
-      .graphic-d-categories a.active {
-        background-color: white;
-        color: black;
-        padding: 15px;
-        padding-bottom: 40px;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border: none;
-        z-index: 1;
-      }
-      .graphic-d-categories a.active:hover {
-        top: -15px;
-        color: rgb(63, 63, 63);
-        transition: all 0.5s ease;
-      }
-      .graphic-design-bg {
-        display: flex;
-        justify-content: space-around;
-        background-color: white;
-        width: 1097px;
-        height: 100%;
-        border: none;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        border-bottom-right-radius: 40px;
-        border-bottom-left-radius: 40px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        margin-top: 10px;
-        z-index: 2;
-      }
+.graphic-d-categories a.active {
+  background-color: white;
+  color: black;
+  z-index: 1;
+}
+
+.graphic-d-categories a.active:hover {
+  top: -0.6em;
+  color: rgb(63, 63, 63);
+}
+
+.label-short { display: none; }
+
+/* ---------- White card ---------- */
+.graphic-design-bg {
+  box-sizing: border-box;
+  width: min(1097px, calc(100% - 16px));
+  background-color: white;
+  padding: clamp(10px, 2.7vw, 30px) clamp(6px, 2.1vw, 23px);
+  border: none;
+  border-radius: 0 0 clamp(16px, 3.6vw, 40px) clamp(16px, 3.6vw, 40px);
+  margin-top: calc(var(--tab-font) * 0.4);
+  position: relative;
+  z-index: 2;
+}
 
 .projects-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 50px;
+  gap: clamp(20px, 4.5vw, 50px);
 }
 
+.empty-message {
+  text-align: center;
+  color: rgb(150, 150, 150);
+  padding: 60px 0;
+}
 
+/* ---------- One project ---------- */
 .project {
-  display: block;
-  width: 1050px;
-  height: 540px;
-  margin: 0;
+  width: 100%;
 }
 
 .project-background {
-  display: inline-block;
-  width: 100%;
-  height: auto;
-}
+  --inset-x: 0.95cqw;
+  --inset-bottom: 1cqw;
+  --title-top: 0.32cqw;
 
-.project-title {
-  font-size: 18px;
-  font-weight: 600;
-  text-align: left;
-  margin: 0;
-  margin-top: 10px;
-  margin-bottom: -25px;
-  margin-left: 60px;
   position: relative;
-  z-index: 2;
-  color: rgb(0, 0, 0);
-  padding-left: 10px;
+  display: block;
+  width: 100%;
+  container-type: inline-size;   /* lets the children use cqw = 1% of the card width */
 }
 
 .project-bg-img {
+  display: block;
+  width: 100%;
+  height: auto;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.05));
-  transition: all 0.3s ease;
+}
+
+.project-title {
+  position: absolute;
+  top: var(--title-top);
+  left: 6.67cqw;
+  z-index: 2;
+  margin: 0;
+  font-size: max(11px, 1.714cqw);
+  font-weight: 600;
+  white-space: nowrap;
+  color: rgb(0, 0, 0);
 }
 
 .project-subtitle {
-  font-size: 14px;
+  font-size: max(10px, 1.333cqw);
   font-weight: 400;
   color: rgb(100, 100, 100);
 }
 
-
-
-
-
-
-
-
-/* 1. Basic Reset and Sizing */
-.gallery-container {
-  width: 1030px; /* Or a specific width */
-  height: 500px;
-  display: inline-block;
-  position: relative;
-  top: -515px;
-  left: 10px;
-  overflow: hidden; /* Hides content outside this box - essential! */
-  white-space: nowrap; /* Prevents images from wrapping to the next line */
-  margin: 0;
-  border: none;
-  border-radius: 10px;
+.project-note {
+  display: none;
 }
 
-/* 2. Styling the Images and Track */
+/* ---------- Scrolling window ---------- */
+.gallery-container {
+  position: absolute;
+  left: var(--inset-x);
+  bottom: var(--inset-bottom);
+  width: calc(100% - 2 * var(--inset-x));
+  aspect-ratio: 1030 / 500;
+  overflow: hidden;
+  border-radius: max(4px, 0.95cqw);
+}
+
 .gallery-track {
-  display: inline-block; /* Allows the track to be wider than the container */
-  animation: scroll-left 30s linear infinite; /* Apply the animation */
+  display: flex;
+  width: max-content;
+  height: 100%;
+  will-change: transform;
 }
 
 .gallery-track img {
-  height: 500px; /* Adjust height as needed */
+  flex: none;
+  height: 100%;
   width: auto;
-  margin-right: 10px; /* Spacing between images */
-  display: inline-block; /* Images side-by-side */
-  border-radius: 10px;
+  margin-right: max(4px, 0.95cqw);
+  border-radius: max(4px, 0.95cqw);
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-/* 3. The Keyframes Animation */
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0); /* Start position: no translation */
+/* ---------- Phones ---------- */
+@media (max-width: 700px) {
+  :root {
+    --tab-font: 3.1vw;
   }
-  100% {
-    /* Translate the track to the left by its full width (100%) */
-    /* If you duplicated the content exactly once, you can use -50% */
-    /* A safe bet for a seamless loop is to translate by the exact width of the non-duplicated content */
-    transform: translateX(-70%); 
-    /* The value -50% is commonly used when the content inside the track is exactly doubled */
+
+  .graphic-d-pagination {
+    gap: 0.3em;
+    margin-top: 30px;
+  }
+
+  .graphic-d-categories a {
+    padding: 0.5em 0.4em;
+    padding-bottom: 1.6em;
+  }
+
+  .label-full { display: none; }
+  .label-short { display: inline; }
+
+  .project-subtitle { display: none; }
+
+  .project-note {
+    display: block;
+    margin: 6px 0 0 4px;
+    font-size: 12px;
+    color: rgb(110, 110, 110);
   }
 }
 
-.gallery-container:hover .gallery-track {
-  animation-play-state: paused;
+
+/* ====================================================================
+   LIGHTBOX (full-screen view: the same endless strip, but big)
+   ==================================================================== */
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.94);
+  font-family: Gabarito, Arial, Helvetica, sans-serif;
+  color: #fff;
+  outline: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s;
+}
+
+/* the big scrolling window */
+.lightbox-strip {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 250px);
+  height: calc(100dvh - 250px);
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+
+.lightbox-strip.ready {
+  opacity: 1;
+}
+
+.lightbox-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  will-change: transform;
+}
+
+.lightbox-track img {
+  flex: none;
+  height: 100%;
+  width: auto;
+  margin-right: 20px;
+  border-radius: 6px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox-caption {
+  margin-top: 18px;
+  padding: 0 16px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.lightbox-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.lightbox-subtitle {
+  font-size: 1rem;
+  color: rgb(190, 190, 190);
+}
+
+.lightbox-subtitle:empty {
+  display: none;
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  position: absolute;
+  border: none;
+  color: rgb(215, 215, 215);
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close {
+  top: 16px;
+  right: 24px;
+  padding: 12px;
+  background: none;
+  font-size: 3rem;
+}
+
+.lightbox-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  font-size: 1.6rem;
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+  color: #fff;
+}
+
+.lightbox-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close:focus-visible,
+.lightbox-arrow:focus-visible,
+.lightbox-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+.lightbox-prev:hover { transform: translateY(-50%) translateX(-3px); }
+.lightbox-next:hover { transform: translateY(-50%) translateX(3px); }
+
+/* play / pause / reverse buttons */
+.lightbox-controls {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.lightbox-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 112px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  color: rgb(215, 215, 215);
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lightbox-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.lightbox-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.lightbox-reverse[aria-pressed="true"] {
+  background: #fff;
+  color: #000;
+}
+
+.lightbox-play .icon-play { display: none; }
+.lightbox-play.is-paused .icon-play { display: block; }
+.lightbox-play.is-paused .icon-pause { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox, .lightbox-strip, .lightbox-close, .lightbox-arrow { transition: none; }
+}
+
+/* Phones: arrows go down next to the buttons, the strip keeps the full width */
+@media (max-width: 600px) {
+  .lightbox-strip {
+    height: min(calc(100vh - 280px), 120vw);
+    height: min(calc(100dvh - 280px), 120vw);
+  }
+
+  .lightbox-track img { margin-right: 12px; }
+
+  .lightbox-close { top: 8px; right: 12px; }
+
+  .lightbox-arrow {
+    top: auto;
+    bottom: 22px;
+    transform: none;
+    width: 46px;
+    height: 46px;
+  }
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
+  .lightbox-prev:hover, .lightbox-next:hover { transform: none; }
+
+  .lightbox-controls { bottom: 26px; gap: 8px; }
+  .lightbox-btn { min-width: 0; padding: 9px 12px; font-size: 0.85rem; }
 }
