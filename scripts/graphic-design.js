@@ -234,9 +234,6 @@
     bg.appendChild(gallery);
     root.appendChild(bg);
 
-    // on phones the subtitle is shown under the card instead of inside the tab
-    if (project.subtitle) root.appendChild(el('p', 'project-note', project.subtitle));
-
     projectsBox.appendChild(root);
 
     const m = createMarquee(project, gallery, track);
