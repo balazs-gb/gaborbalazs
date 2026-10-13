@@ -135,10 +135,6 @@ body {
   color: rgb(100, 100, 100);
 }
 
-.project-note {
-  display: none;
-}
-
 /* ---------- Scrolling window ---------- */
 .gallery-container {
   position: absolute;
@@ -168,32 +164,58 @@ body {
   -webkit-user-drag: none;
 }
 
-/* ---------- Phones ---------- */
+/* ---------- Phones (desktop is not affected by anything below) ---------- */
 @media (max-width: 700px) {
   :root {
-    --tab-font: 3.1vw;
+    --tab-font: 3.7vw;
   }
 
+  /* Menu: stretches over the full width of the white card */
   .graphic-d-pagination {
-    gap: 0.3em;
+    box-sizing: border-box;
+    width: calc(100% - 16px);
+    gap: 0.25em;
     margin-top: 30px;
   }
 
+  .graphic-d-categories {
+    flex: 1 1 auto;
+  }
+
   .graphic-d-categories a {
-    padding: 0.5em 0.4em;
-    padding-bottom: 1.6em;
+    display: block;
+    text-align: center;
+    padding: 0.5em 0.2em 1.6em;
+  }
+
+  /* the card slides up under the tabs (the extra tab padding hides behind it) */
+  .graphic-design-bg {
+    margin-top: calc(var(--tab-font) * -1.2);
   }
 
   .label-full { display: none; }
   .label-short { display: inline; }
 
-  .project-subtitle { display: none; }
+  /* More space between the projects */
+  .projects-container {
+    gap: 48px;
+  }
 
-  .project-note {
+  /* Title + description are written ABOVE the project window,
+     not inside the little tab */
+  .project-title {
+    position: static;
+    margin: 0 0 8px 4px;
+    font-size: 20px;
+    line-height: 1.15;
+    white-space: normal;
+  }
+
+  .project-subtitle {
     display: block;
-    margin: 6px 0 0 4px;
-    font-size: 12px;
-    color: rgb(110, 110, 110);
+    margin-top: 3px;
+    font-size: 14px;
+    line-height: 1.25;
   }
 }
 
