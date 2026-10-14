@@ -1736,7 +1736,11 @@ function runSimulation(config) {
   // Updated to allow single colors
   function generateColor() {
     if (config.RANDOM_COLORS) {
-      let c = HSVtoRGB(Math.random(), 1.0, 1.0);
+      // Only green, blue and purple: pick the hue from a limited range.
+      // Hue scale: 0 red, 0.17 yellow, 0.33 green, 0.50 cyan, 0.67 blue, 0.78 purple, 0.83 magenta, 1 red
+      const HUE_MIN = 0.33; // green
+      const HUE_MAX = 0.78; // purple
+      let c = HSVtoRGB(HUE_MIN + Math.random() * (HUE_MAX - HUE_MIN), 1.0, 1.0);
       c.r *= 0.15;
       c.g *= 0.15;
       c.b *= 0.15;
