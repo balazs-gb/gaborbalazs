@@ -37,7 +37,7 @@ const graphicDesign = [
     projects: [
       {
         title: "VIBE Festival",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising, 2021-2026",
         images: [
           "Images/projects/vibe/369699223_858150212349155_1000205966917858233_n.jpg",
           "Images/projects/vibe/Fellépők covers1-10.jpg",
@@ -45,8 +45,16 @@ const graphicDesign = [
         ]
       },
       {
+        title: "TABAKÓ Festival",
+        subtitle: "with Diversity Advertising, 2022-2023",
+        images: [
+          "Images/projects/branding/tabako (1).webp",
+          "Images/projects/branding/tabako (2).webp"
+        ]
+      },
+      {
         title: "KMDSZ Diáknapok & TM",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising, 2023-2026",
         images: [
           "Images/projects/kmdsz/DN-2023.webp",
           "Images/projects/kmdsz/DN-2024.webp",
@@ -59,12 +67,73 @@ const graphicDesign = [
         ]
       },
       {
+        title: "BBU - International Case Competition",
+        subtitle: "with Diversity, 2024",
+        images: [
+          "Images/projects/branding/bbuicc (1).webp",
+          "Images/projects/branding/bbuicc (2).webp",
+          "Images/projects/branding/bbuicc (3).webp",
+          "Images/projects/branding/bbuicc (4).webp",
+          "Images/projects/branding/bbuicc (5).webp",
+          "Images/projects/branding/bbuicc (6).webp",
+          "Images/projects/branding/bbuicc (7).webp",
+          "Images/projects/branding/bbuicc (8).webp",
+          "Images/projects/branding/bbuicc (9).webp"
+        ]
+      },
+      {
+        title: "Bimada",
+        subtitle: "with Diversity Advertising, 2024",
+        images: [
+          "Images/projects/branding/bimada (1).webp",
+          "Images/projects/branding/bimada (2).webp",
+          "Images/projects/branding/bimada (3).webp",
+          "Images/projects/branding/bimada (4).webp",
+          "Images/projects/branding/bimada (5).webp",
+          "Images/projects/branding/bimada (6).webp",
+          "Images/projects/branding/bimada (7).webp",
+          "Images/projects/branding/bimada (8).webp",
+          "Images/projects/branding/bimada (9).webp"
+        ]
+      },
+            {
         title: "Film & Média Napok",
         subtitle: "2021",
         images: [
           "Images/projects/fmn-1.webp",
           "Images/projects/fmn-2.webp",
           "Images/projects/fmn-3.webp"
+        ]
+      },
+      {
+        title: "EMD",
+        subtitle: "with Diversity Advertising, 2025",
+        images: [
+          "Images/projects/branding/emd (1).webp",
+          "Images/projects/branding/emd (2).webp",
+          "Images/projects/branding/emd (3).webp",
+          "Images/projects/branding/emd (4).webp",
+          "Images/projects/branding/emd (5).webp",
+          "Images/projects/branding/emd (6).webp",
+          "Images/projects/branding/emd (7).webp",
+          "Images/projects/branding/emd (8).webp",
+          "Images/projects/branding/emd (9).webp",
+          "Images/projects/branding/emd (10).webp"
+        ]
+      },
+      {
+        title: "Erdélyi Egyetemi Börze",
+        subtitle: "with Diversity Advertising, 2025",
+        images: [
+          "Images/projects/branding/eeb (1).webp",
+          "Images/projects/branding/eeb (2).webp",
+          "Images/projects/branding/eeb (3).webp",
+          "Images/projects/branding/eeb (4).webp",
+          "Images/projects/branding/eeb (5).webp",
+          "Images/projects/branding/eeb (6).webp",
+          "Images/projects/branding/eeb (7).webp",
+          "Images/projects/branding/eeb (8).webp",
+          "Images/projects/branding/eeb (9).webp"
         ]
       }
     ]
