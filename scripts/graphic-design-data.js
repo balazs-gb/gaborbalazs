@@ -53,7 +53,9 @@ const graphicDesign = [
           "Images/projects/kmdsz/DN-2025.webp",
           "Images/projects/kmdsz/TM-2023.webp",
           "Images/projects/kmdsz/TM-2024.webp",
-          "Images/projects/kmdsz/TM-2025.webp"
+          "Images/projects/kmdsz/TM-2025.webp",
+          "Images/projects/kmdsz/2026kmdsz.webp",
+          "Images/projects/kmdsz/2026tm.webp"
         ]
       },
       {
@@ -73,13 +75,39 @@ const graphicDesign = [
     short: "Logo",
     projects: [
       {
+        title: "La Cluj logo concept",
+        subtitle: "collaboration with Diversity Advertising",
+        images: [
+          "Images/projects/logo/lacluj1.webp",
+          "Images/projects/logo/lacluj2.gif",
+          "Images/projects/logo/lacluj3.webp",
+          "Images/projects/logo/lacluj4.webp"
+        ]
+      },
+      {
+        title: "Logo designs",
+        subtitle: "collaboration with Diversity Advertising",
+        images: [
+          "Images/projects/logo/div.webp",
+          "Images/projects/logo/bimada.webp",
+          "Images/projects/logo/nolinalogo.webp",
+          "Images/projects/logo/kerek.webp",
+          "Images/projects/logo/emd.webp",
+          "Images/projects/logo/eeb.webp",
+          "Images/projects/logo/nolina.webp",
+          "Images/projects/logo/bbuicc.webp"
+        ]
+      },
+      {
         title: "Logo designs",
         images: [
+          "Images/projects/logo/respond.webp",
           "Images/projects/logo/logo1.webp",
           "Images/projects/logo/logo2.webp",
           "Images/projects/logo/logo3.webp"
         ]
       }
+      
     ]
   },
   {
@@ -88,13 +116,61 @@ const graphicDesign = [
     short: "Social",
     projects: [
       {
+        title: "Diversity Advertising",
+        subtitle: "collaboration with Diversity Advertising",
+        images: [
+          "Images/projects/social/div (1).webp",
+          "Images/projects/social/div (2).webp",
+          "Images/projects/social/div (3).webp",
+          "Images/projects/social/div (4).webp",
+          "Images/projects/social/div (5).webp",
+          "Images/projects/social/div (6).webp",
+          "Images/projects/social/div (7).webp"
+        ]
+        
+      },
+      {
         title: "VIBE Festival",
         subtitle: "collaboration with Diversity Advertising",
         images: [
-          "Images/projects/vibe/369699223_858150212349155_1000205966917858233_n.jpg",
-          "Images/projects/vibe/Fellépők covers1-10.jpg",
-          "Images/projects/vibe/MERCH poszt-02.jpg"
+          "Images/projects/social/vibe (1).webp",
+          "Images/projects/social/vibe (2).webp",
+          "Images/projects/social/vibe (3).webp",
+          "Images/projects/social/vibe (4).webp",
+          "Images/projects/social/vibe (5).webp"
         ]
+        
+      },
+      {
+        title: "Tabakó Festival",
+        subtitle: "collaboration with Diversity Advertising",
+        images: [
+          "Images/projects/social/tabako (1).webp",
+          "Images/projects/social/tabako (2).webp",
+          "Images/projects/social/tabako (3).webp"
+        ]
+        
+      },
+      {
+        title: "BBTE Közgáz",
+        subtitle: " [UBB Economics] collaboration with Diversity Advertising",
+        images: [
+          "Images/projects/social/bbte (1).webp",
+          "Images/projects/social/bbte (2).webp",
+          "Images/projects/social/bbte (3).webp"
+        ]
+        
+      },
+      {
+        title: "Harmonya",
+        subtitle: "collaboration with Diversity Advertising",
+        images: [
+          "Images/projects/social/harmonya (1).webp",
+          "Images/projects/social/harmonya (2).webp",
+          "Images/projects/social/harmonya (3).webp",
+          "Images/projects/social/harmonya (4).webp"
+        ]
+        
       }
     ]
   },
@@ -143,8 +219,8 @@ const graphicDesign = [
     short: "UI Design",
     projects: [
       {
-        title: "VIBE APP",
-        subtitle: "collaboration with Diversity Advertising",
+        title: "VIBE Festival APP",
+        subtitle: "with Diversity Advertising, 2025",
         images: [
           "Images/projects/UI design/vibeapp (1).webp",
           "Images/projects/UI design/vibeapp (2).webp",
@@ -155,7 +231,7 @@ const graphicDesign = [
       },
       {
         title: "TABAKÓ Festival APP",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising, 2024",
         images: [
           "Images/projects/UI design/tabako (1).webp",
           "Images/projects/UI design/tabako (2).webp",
@@ -166,17 +242,18 @@ const graphicDesign = [
       },
       {
         title: "Diversity Website",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising, 2023",
         images: [
-          "Images/projects/UI design/div (1).png",
-          "Images/projects/UI design/div (2).png",
-          "Images/projects/UI design/div (3).png",
-          "Images/projects/UI design/div (4).png"
+          "Images/projects/UI design/div (0).webp",
+          "Images/projects/UI design/div (1).webp",
+          "Images/projects/UI design/div (2).webp",
+          "Images/projects/UI design/div (3).webp",
+          "Images/projects/UI design/div (4).webp"
         ]
       },
       {
         title: "RentE WebApp",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising, 2024",
         images: [
           "Images/projects/UI design/rente (1).webp",
           "Images/projects/UI design/rente (2).webp",
@@ -184,6 +261,15 @@ const graphicDesign = [
           "Images/projects/UI design/rente (4).webp",
           "Images/projects/UI design/rente (5).webp",
           "Images/projects/UI design/rente (6).webp"
+        ]
+      },
+      {
+        title: "The Közgáz (Re)Union Website",
+        subtitle: "with Diversity Advertising, 2026",
+        images: [
+          "Images/projects/UI design/bbte (1).webp",
+          "Images/projects/UI design/bbte (2).webp",
+          "Images/projects/UI design/bbte (3).webp"
         ]
       }
     ]
