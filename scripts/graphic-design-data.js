@@ -249,35 +249,66 @@ const graphicDesign = [
     short: "Motion",
     projects: [
       {
-        title: "Frame-by-frame",
-        subtitle: "Logo animations",
+        title: "Social media animations",
+        subtitle: "with Diversity Advertising",
         images: [
-          "Images/projects/motion/anim5.gif",
-          "Images/projects/motion/anim6.gif",
-          "Images/projects/motion/anim7.gif"
+          "Images/projects/motion/tabako.mp4",
+          "Images/projects/motion/divposzt.mp4",
+          "Images/projects/motion/DEVOPS (1).mp4",
+          "Images/projects/motion/DEVOPS (2).mp4"
+        ]
+      },
+      {
+        title: "Infographics",
+        subtitle: "with Diversity Advertising",
+        images: [
+          "Images/projects/motion/fomco.mp4",
+          "Images/projects/motion/mendola.mp4",
+          "Images/projects/motion/rente.mp4"
         ]
       },
       {
         title: "Logo animations",
         images: [
-          "Images/projects/motion/anim1.gif",
-          "Images/projects/motion/anim2.gif",
-          "Images/projects/motion/anim3.gif",
-          "Images/projects/motion/anim4.gif"
+          "Images/projects/motion/008.mp4",
+          "Images/projects/motion/012.mp4",
+          "Images/projects/motion/014.mp4",
+          "Images/projects/motion/038.mp4",
+          "Images/projects/motion/039.mp4",
+          "Images/projects/motion/023.mp4",
+          "Images/projects/motion/021.mp4",
+          "Images/projects/motion/019.mp4",
+          "Images/projects/motion/020.mp4"
+        ]
+      },
+      {
+        title: "3D animations",
+        subtitle: "with Diversity Advertising",
+        images: [
+          "Images/projects/motion/stage.mp4",
+          "Images/projects/motion/fpv.mp4"
+        ]
+      },
+      {
+        title: "Frame-by-frame",
+        subtitle: "Logo animations",
+        images: [
+          "Images/projects/motion/fbf (1).mp4",
+          "Images/projects/motion/fbf (2).mp4",
+          "Images/projects/motion/fbf (3).mp4"
         ]
       },
       {
         title: "Inktober",
-        subtitle: "some parts, 2021",
+        subtitle: "some parts, 2022",
         images: [
-          "Images/projects/inktober/8_gif.gif",
-          "Images/projects/inktober/12_gif.gif",
-          "Images/projects/inktober/17_gif.gif",
-          "Images/projects/inktober/19_gif.gif",
-          "Images/projects/inktober/22_gif.gif",
-          "Images/projects/inktober/27_gif.gif",
-          "Images/projects/inktober/28_gif.gif",
-          "Images/projects/inktober/29_gif.gif"
+          "Images/projects/motion/Inkt12.mp4",
+          "Images/projects/motion/Inkt17.mp4",
+          "Images/projects/motion/Inkt19.mp4",
+          "Images/projects/motion/Inkt22.mp4",
+          "Images/projects/motion/Inkt27.mp4",
+          "Images/projects/motion/Inkt28.mp4",
+          "Images/projects/motion/Inkt29.mp4"
         ]
       }
     ]
