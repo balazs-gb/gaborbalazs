@@ -9,11 +9,15 @@
                                               // so the speed always looks the same.
   const DESIGN_HEIGHT = 500;
   const GLIDE_MS = 650;                       // duration of an arrow-button step in the full-screen view
+  const VIDEO_WAIT_MS = 6000;                 // how long to wait for a video's size on a slow connection
 
   /* ---------- Helpers ---------- */
   const categories = graphicDesign;
   const category = categories.find(function (c) { return c.id === document.body.dataset.category; }) || categories[0];
   document.title = category.label + ' | GB';
+
+  const VIDEO_RE = /\.(mp4|webm|ogv|mov|m4v)(\?.*)?$/i;
+  function isVideo(path) { return VIDEO_RE.test(path); }
 
   function el(tag, className, text) {
     const node = document.createElement(tag);
@@ -40,9 +44,89 @@
     menu.appendChild(wrapper);
   });
 
+  /* ---------- Images and videos ---------- */
+  let lightboxOpen = false;
+
+  // A video plays only while it is really visible (inside its window and on screen).
+  // Videos on the page rest while the full-screen view is open, and the other way round.
+  const observedVideos = new Set();
+  const visibleVideos = new Set();
+
+  function syncVideo(v) {
+    const shouldPlay = visibleVideos.has(v) && ((v.dataset.lb === '1') === lightboxOpen);
+    if (shouldPlay) {
+      const p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    } else {
+      v.pause();
+    }
+  }
+  function syncAllVideos() { observedVideos.forEach(syncVideo); }
+
+  const videoObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) visibleVideos.add(e.target); else visibleVideos.delete(e.target);
+          syncVideo(e.target);
+        });
+      }, { threshold: 0.15 })
+    : null;
+
+  function trackVideo(v) {
+    if (v.tagName !== 'VIDEO') return;
+    observedVideos.add(v);
+    if (videoObserver) videoObserver.observe(v); else v.autoplay = true;
+  }
+  function untrackVideo(v) {
+    if (v.tagName !== 'VIDEO') return;
+    observedVideos.delete(v);
+    visibleVideos.delete(v);
+    if (videoObserver) videoObserver.unobserve(v);
+    v.pause();
+  }
+
+  function createMedia(src, label, index, inLightbox) {
+    let node;
+    if (isVideo(src)) {
+      node = document.createElement('video');
+      node.src = url(src) + '#t=0.001';          // shows the first frame before playing
+      node.muted = true;                          // browsers only autoplay muted videos
+      node.setAttribute('muted', '');             // (the attribute is copied to the clones)
+      node.loop = true;
+      node.setAttribute('loop', '');
+      node.playsInline = true;
+      node.setAttribute('playsinline', '');
+      node.preload = 'metadata';                  // load only the basics until it is visible
+      node.disablePictureInPicture = true;
+      node.setAttribute('aria-label', label);
+    } else {
+      node = new Image();
+      node.src = url(src);
+      node.alt = label;
+      node.draggable = false;
+    }
+    node.dataset.index = index;
+    if (inLightbox) node.dataset.lb = '1';
+    return node;
+  }
+
+  function waitFor(node) {   // resolves true when the file is usable, false when it is missing
+    return new Promise(function (resolve) {
+      if (node.tagName === 'VIDEO') {
+        if (node.readyState >= 1) return resolve(true);
+        node.addEventListener('loadedmetadata', function () { resolve(true); }, { once: true });
+        node.addEventListener('error', function () { resolve(false); }, { once: true });
+        setTimeout(function () { resolve(true); }, VIDEO_WAIT_MS);
+      } else {
+        if (node.complete) return resolve(node.naturalWidth > 0);
+        node.addEventListener('load', function () { resolve(true); }, { once: true });
+        node.addEventListener('error', function () { resolve(false); }, { once: true });
+      }
+    });
+  }
+
   /* ---------- Endless scrolling strip (used by the pages AND the full-screen view) ---------- */
   const marquees = [];
-  let lightboxOpen = false;
 
   function createMarquee(project, gallery, track, opts) {
     opts = opts || {};
@@ -55,15 +139,12 @@
     };
     gallery._marquee = m;
 
-    // one set of images (originals); copies are added by layout()
-    const imgs = project.images.map(function (src, i) {
-      const img = new Image();
-      img.src = url(src);
-      img.alt = project.title + ' – ' + (i + 1);
-      img.dataset.index = i;
-      img.draggable = false;
-      track.appendChild(img);
-      return img;
+    // one set of images/videos (originals); copies are added by layout()
+    let items = project.images.map(function (src, i) {
+      const node = createMedia(src, project.title + ' – ' + (i + 1), i, m.inLightbox);
+      track.appendChild(node);
+      trackVideo(node);
+      return node;
     });
 
     function apply() {
@@ -72,12 +153,12 @@
     m.apply = apply;
 
     function layout() {
-      track.querySelectorAll('.clone').forEach(function (n) { n.remove(); });
+      track.querySelectorAll('.clone').forEach(function (n) { untrackVideo(n); n.remove(); });
 
-      const first = imgs[0];
-      const last = imgs[imgs.length - 1];
+      const first = items[0];
+      const last = items[items.length - 1];
       const gap = parseFloat(getComputedStyle(last).marginRight) || 0;
-      // width of exactly ONE full set of images (including the gap after the last one)
+      // width of exactly ONE full set (including the gap after the last one)
       const cycle = last.getBoundingClientRect().right + gap - first.getBoundingClientRect().left;
       if (!(cycle > 0)) return;
 
@@ -85,38 +166,42 @@
       m.cycle = cycle;
       m.pos = ratio * cycle;
 
-      // extra sets so the window is never empty, however few images there are
+      // extra sets so the window is never empty, however few items there are
       const extraSets = Math.ceil(gallery.clientWidth / cycle);
       for (let s = 0; s < extraSets; s++) {
-        imgs.forEach(function (img) {
-          const copy = img.cloneNode();
+        items.forEach(function (node) {
+          const copy = node.cloneNode();
           copy.classList.add('clone');
-          copy.alt = '';
+          copy.removeAttribute('aria-label');
           copy.setAttribute('aria-hidden', 'true');
+          if (copy.tagName === 'IMG') copy.alt = '';
           track.appendChild(copy);
+          trackVideo(copy);
         });
       }
       apply();
       m.ready = true;
     }
 
-    // centre of every original image, measured from the start of the first one
+    // centre of every original item, measured from the start of the first one
     function centers() {
-      const r0 = imgs[0].getBoundingClientRect();
-      return imgs.map(function (img) {
-        const r = img.getBoundingClientRect();
+      const r0 = items[0].getBoundingClientRect();
+      return items.map(function (node) {
+        const r = node.getBoundingClientRect();
         return (r.left - r0.left) + r.width / 2;
       });
     }
 
-    // put image number `index` in the middle of the window
+    // put the item with this number (as in the data file) in the middle of the window
     m.centerOn = function (index) {
       if (!m.ready) return;
-      m.pos = wrap(centers()[index] - gallery.clientWidth / 2, m.cycle);
+      let k = items.findIndex(function (n) { return Number(n.dataset.index) === index; });
+      if (k < 0) k = 0;
+      m.pos = wrap(centers()[k] - gallery.clientWidth / 2, m.cycle);
       apply();
     };
 
-    // smoothly move to the next (+1) or previous (-1) image
+    // smoothly move to the next (+1) or previous (-1) item
     m.step = function (sign) {
       if (!m.ready) return;
       const half = gallery.clientWidth / 2;
@@ -135,17 +220,31 @@
     };
 
     let observer = null;
-    m.whenReady = Promise.all(imgs.map(function (img) {
-      return new Promise(function (resolve) {
-        if (img.complete) resolve();
+    m.whenReady = Promise.all(items.map(waitFor)).then(function (results) {
+      if (m.destroyed) return;
+
+      // files that could not be loaded (wrong path / name) are skipped
+      const good = [];
+      items.forEach(function (node, i) {
+        if (results[i]) good.push(node);
         else {
-          img.addEventListener('load', resolve, { once: true });
-          img.addEventListener('error', resolve, { once: true });
+          console.warn('Could not load: ' + project.images[Number(node.dataset.index)]);
+          untrackVideo(node);
+          node.remove();
         }
       });
-    })).then(function () {
-      if (m.destroyed) return;
+      items = good;
+      if (!items.length) return;
+
       layout();
+
+      // a video whose size arrived late: measure again
+      items.forEach(function (node) {
+        if (node.tagName === 'VIDEO' && node.readyState < 1) {
+          node.addEventListener('loadedmetadata', function () { if (!m.destroyed) layout(); }, { once: true });
+        }
+      });
+
       if ('ResizeObserver' in window) {
         let lastW = gallery.clientWidth, lastH = gallery.clientHeight;
         observer = new ResizeObserver(function () {
@@ -165,6 +264,7 @@
       m.destroyed = true;
       if (observer) observer.disconnect();
       if (m.fallbackResize) window.removeEventListener('resize', m.fallbackResize);
+      track.querySelectorAll('video').forEach(untrackVideo);
       const i = marquees.indexOf(m);
       if (i > -1) marquees.splice(i, 1);
     };
@@ -233,7 +333,6 @@
     gallery.appendChild(track);
     bg.appendChild(gallery);
     root.appendChild(bg);
-
     projectsBox.appendChild(root);
 
     const m = createMarquee(project, gallery, track);
@@ -242,8 +341,8 @@
       gallery.addEventListener('mouseleave', function () { m.hovered = false; });
     }
     gallery.addEventListener('click', function (e) {
-      const img = e.target.closest('img');
-      if (img) openLightbox(project, Number(img.dataset.index), m.dir);
+      const media = e.target.closest('img, video');
+      if (media) openLightbox(project, Number(media.dataset.index), m.dir);
     });
     if (visibilityObserver) visibilityObserver.observe(gallery);
   }
@@ -260,6 +359,7 @@
   const lbTrack = lb.querySelector('.lightbox-track');
   const lbTitle = lb.querySelector('.lightbox-title');
   const lbSubtitle = lb.querySelector('.lightbox-subtitle');
+  const lbControls = lb.querySelector('.lightbox-controls');
   const btnClose = lb.querySelector('.lightbox-close');
   const btnPrev = lb.querySelector('.lightbox-prev');
   const btnNext = lb.querySelector('.lightbox-next');
@@ -269,6 +369,51 @@
   let lbMarquee = null;
   let lbDir = 1;
   let lbPlaying = true;
+
+  /* sound button: only appears when the project contains videos */
+  let btnSound = null;
+  let soundOn = false;
+  let soundTimer = null;
+
+  function updateSound() {
+    // the sound belongs to the video nearest to the middle of the screen
+    const vids = Array.from(lbTrack.querySelectorAll('video'));
+    const centerX = window.innerWidth / 2;
+    let best = null, bestDist = Infinity;
+    vids.forEach(function (v) {
+      const r = v.getBoundingClientRect();
+      if (r.right < 0 || r.left > window.innerWidth) return;
+      const d = Math.abs((r.left + r.right) / 2 - centerX);
+      if (d < bestDist) { best = v; bestDist = d; }
+    });
+    vids.forEach(function (v) { v.muted = !(soundOn && v === best); });
+  }
+
+  function addSoundButton() {
+    btnSound = el('button', 'lightbox-btn lightbox-sound');
+    btnSound.type = 'button';
+    btnSound.setAttribute('aria-pressed', 'false');
+    btnSound.setAttribute('aria-label', 'Sound on or off');
+    btnSound.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>' +
+      '<span class="btn-label">Sound</span>';
+    btnSound.addEventListener('click', function () {
+      soundOn = !soundOn;
+      btnSound.setAttribute('aria-pressed', String(soundOn));
+      updateSound();
+    });
+    lbControls.appendChild(btnSound);
+    lbControls.classList.add('has-sound');
+    soundTimer = setInterval(updateSound, 250);
+  }
+
+  function removeSoundButton() {
+    clearInterval(soundTimer);
+    soundOn = false;
+    if (btnSound) { btnSound.remove(); btnSound = null; }
+    lbControls.classList.remove('has-sound');
+  }
 
   function updateControls() {
     btnPlay.classList.toggle('is-paused', !lbPlaying);
@@ -281,6 +426,7 @@
     lbDir = dir || 1;
     lbPlaying = true;
     lightboxOpen = true;
+    syncAllVideos();                    // videos on the page rest
 
     lbTitle.textContent = project.title;
     lbSubtitle.textContent = project.subtitle || '';
@@ -290,6 +436,9 @@
     lb.setAttribute('aria-hidden', 'false');
     document.body.classList.add('lightbox-open');
 
+    removeSoundButton();
+    if (project.images.some(isVideo)) addSoundButton();
+
     lbStrip.classList.remove('ready');
     lbTrack.innerHTML = '';
     lbTrack.style.transform = '';
@@ -297,7 +446,7 @@
     lbMarquee = current;
     current.whenReady.then(function () {
       if (lbMarquee !== current) return;
-      current.centerOn(index);          // the clicked image starts in the middle
+      current.centerOn(index);          // the clicked item starts in the middle
       lbStrip.classList.add('ready');
     });
     lb.focus();
@@ -305,11 +454,13 @@
 
   function closeLightbox() {
     lightboxOpen = false;
+    removeSoundButton();
     if (lbMarquee) { lbMarquee.destroy(); lbMarquee = null; }
     lbTrack.innerHTML = '';
     lb.classList.remove('open');
     lb.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('lightbox-open');
+    syncAllVideos();                    // videos on the page play again
   }
 
   const stepPrev = function () { if (lbMarquee) lbMarquee.step(-1); };
@@ -330,6 +481,13 @@
   btnNext.addEventListener('click', stepNext);
   btnPlay.addEventListener('click', togglePlay);
   btnReverse.addEventListener('click', reverse);
+
+  // click on a video in the full-screen view: pause / play that video
+  lbTrack.addEventListener('click', function (e) {
+    const v = e.target.closest('video');
+    if (!v) return;
+    if (v.paused) { const p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause();
+  });
 
   lb.addEventListener('click', function (e) {   // click on the dark background closes it
     if (!e.target.closest('.lightbox-strip, .lightbox-caption, .lightbox-arrow, .lightbox-close, .lightbox-controls')) {
