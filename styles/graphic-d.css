@@ -124,7 +124,7 @@ body {
   z-index: 2;
   margin: 0;
   font-size: max(11px, 1.714cqw);
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
   color: rgb(0, 0, 0);
 }
@@ -132,7 +132,7 @@ body {
 .project-subtitle {
   font-size: max(10px, 1.333cqw);
   font-weight: 400;
-  color: rgb(150, 150, 150);
+  color: rgb(100, 100, 100);
 }
 
 /* ---------- Scrolling window ---------- */
@@ -153,7 +153,8 @@ body {
   will-change: transform;
 }
 
-.gallery-track img {
+.gallery-track img,
+.gallery-track video {
   flex: none;
   height: 100%;
   width: auto;
@@ -214,7 +215,7 @@ body {
   .project-subtitle {
     display: block;
     margin-top: 3px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.25;
   }
 }
@@ -276,7 +277,8 @@ body.lightbox-open {
   will-change: transform;
 }
 
-.lightbox-track img {
+.lightbox-track img,
+.lightbox-track video {
   flex: none;
   height: 100%;
   width: auto;
@@ -284,6 +286,17 @@ body.lightbox-open {
   border-radius: 6px;
   user-select: none;
   -webkit-user-drag: none;
+}
+
+/* videos: size comes from the file; 16:9 is only used until it is known */
+.gallery-track video,
+.lightbox-track video {
+  aspect-ratio: auto 16 / 9;
+  background: #000;
+}
+
+.lightbox-track video {
+  cursor: pointer;
 }
 
 .lightbox-caption {
@@ -400,7 +413,7 @@ body.lightbox-open {
   height: 18px;
 }
 
-.lightbox-reverse[aria-pressed="true"] {
+.lightbox-btn[aria-pressed="true"] {
   background: #fff;
   color: #000;
 }
@@ -420,7 +433,8 @@ body.lightbox-open {
     height: min(calc(100dvh - 280px), 120vw);
   }
 
-  .lightbox-track img { margin-right: 12px; }
+  .lightbox-track img,
+  .lightbox-track video { margin-right: 12px; }
 
   .lightbox-close { top: 8px; right: 12px; }
 
@@ -436,5 +450,7 @@ body.lightbox-open {
   .lightbox-prev:hover, .lightbox-next:hover { transform: none; }
 
   .lightbox-controls { bottom: 26px; gap: 8px; }
+  /* with three buttons only the icons are shown, so everything fits between the arrows */
+  .lightbox-controls.has-sound .btn-label { display: none; }
   .lightbox-btn { min-width: 0; padding: 9px 12px; font-size: 0.85rem; }
 }
