@@ -40,8 +40,8 @@ const graphicDesign = [
         subtitle: "with Diversity Advertising, 2021-2026",
         images: [
           "Images/projects/vibe/vibee (1).webp",
-          "Images/projects/vibe/vibee (11).webp",
           "Images/projects/vibe/vibee (5).webp",
+          "Images/projects/vibe/vibee (11).webp",
           "Images/projects/vibe/vibee (6).webp",
           "Images/projects/vibe/vibee (12).webp",
           "Images/projects/vibe/vibee (9).webp",
