@@ -42,9 +42,10 @@ const skillsData = {
   abilities: [
     { name: "Brand and Logo Design",                 score: 100 },
     { name: "UI Design",                             score: 100 },
-    { name: "Motion Graphics and Video Editing",     score: 90 },
+    { name: "Animation and Motion Graphics",         score: 90 },
+    { name: "Video Editing and SFX",                 score: 80 },
     { name: "Website (HTML, CSS, JS)",               score: 85 },
-    { name: "Editorial works and Typeface Design",   score: 80 },
+    { name: "Editorial Design and Typeface Design",   score: 80 },
     { name: "3D modeling",                           score: 40 }
   ]
 };
