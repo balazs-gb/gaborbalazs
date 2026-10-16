@@ -39,17 +39,34 @@ const graphicDesign = [
         title: "VIBE Festival",
         subtitle: "with Diversity Advertising, 2021-2026",
         images: [
-          "Images/projects/vibe/369699223_858150212349155_1000205966917858233_n.jpg",
-          "Images/projects/vibe/Fellépők covers1-10.jpg",
-          "Images/projects/vibe/MERCH poszt-02.jpg"
+          "Images/projects/vibe/vibee (1).webp",
+          "Images/projects/vibe/vibee (11).webp",
+          "Images/projects/vibe/vibee (5).webp",
+          "Images/projects/vibe/vibee (6).webp",
+          "Images/projects/vibe/vibee (12).webp",
+          "Images/projects/vibe/vibee (9).webp",
+          "Images/projects/vibe/vibee (3).webp",
+          "Images/projects/vibe/vibee (8).webp",
+          "Images/projects/vibe/vibee (2).webp",
+          "Images/projects/vibe/vibee (7).webp",
+          "Images/projects/vibe/vibee (4).webp"
         ]
       },
       {
         title: "TABAKÓ Festival",
         subtitle: "with Diversity Advertising, 2022-2023",
         images: [
-          "Images/projects/branding/tabako (1).webp",
-          "Images/projects/branding/tabako (2).webp"
+          "Images/projects/branding/tbk (2).webp",
+          "Images/projects/branding/tbk (3).webp",
+          "Images/projects/branding/tbk (8).webp",
+          "Images/projects/branding/tbk (10).webp",
+          "Images/projects/branding/tbk (5).webp",
+          "Images/projects/branding/tbk (6).webp",
+          "Images/projects/branding/tbk (7).webp",
+          "Images/projects/branding/tbk (11).webp",
+          "Images/projects/branding/tbk (9).webp",
+          "Images/projects/branding/tbk (4).webp",
+          "Images/projects/branding/tbk (1).webp"
         ]
       },
       {
@@ -145,7 +162,7 @@ const graphicDesign = [
     projects: [
       {
         title: "La Cluj logo concept",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising",
         images: [
           "Images/projects/logo/lacluj1.webp",
           "Images/projects/logo/lacluj2.gif",
@@ -155,7 +172,7 @@ const graphicDesign = [
       },
       {
         title: "Logo designs",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising",
         images: [
           "Images/projects/logo/div.webp",
           "Images/projects/logo/bimada.webp",
@@ -186,7 +203,7 @@ const graphicDesign = [
     projects: [
       {
         title: "Diversity Advertising",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising",
         images: [
           "Images/projects/social/div (1).webp",
           "Images/projects/social/div (2).webp",
@@ -200,7 +217,7 @@ const graphicDesign = [
       },
       {
         title: "VIBE Festival",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising",
         images: [
           "Images/projects/social/vibe (1).webp",
           "Images/projects/social/vibe (2).webp",
@@ -212,7 +229,7 @@ const graphicDesign = [
       },
       {
         title: "Tabakó Festival",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising",
         images: [
           "Images/projects/social/tabako (1).webp",
           "Images/projects/social/tabako (2).webp",
@@ -222,7 +239,7 @@ const graphicDesign = [
       },
       {
         title: "BBTE Közgáz",
-        subtitle: " [UBB Economics] collaboration with Diversity Advertising",
+        subtitle: " [UBB Economics] with Diversity Advertising",
         images: [
           "Images/projects/social/bbte (1).webp",
           "Images/projects/social/bbte (2).webp",
@@ -232,7 +249,7 @@ const graphicDesign = [
       },
       {
         title: "Harmonya",
-        subtitle: "collaboration with Diversity Advertising",
+        subtitle: "with Diversity Advertising",
         images: [
           "Images/projects/social/harmonya (1).webp",
           "Images/projects/social/harmonya (2).webp",
@@ -299,7 +316,7 @@ const graphicDesign = [
         ]
       },
       {
-        title: "Inktober",
+        title: "Inktober (frame-by-frame)",
         subtitle: "some parts, 2022",
         images: [
           "Images/projects/motion/Inkt12.mp4",
@@ -381,7 +398,7 @@ const graphicDesign = [
     projects: [
       {
         title: "Tabakó",
-        subtitle: "collaboration with Diversity Advertising, 2023",
+        subtitle: "with Diversity Advertising, 2023",
         images: [
           "Images/projects/editorial/tabakofuzet (1).webp",
           "Images/projects/editorial/tabakofuzet (2).webp",
@@ -392,7 +409,7 @@ const graphicDesign = [
       },
       {
         title: "Vibe",
-        subtitle: "collaboration with Diversity Advertising, 2023",
+        subtitle: "with Diversity Advertising, 2023",
         images: [
           "Images/projects/editorial/vibefuzet (5).webp",
           "Images/projects/editorial/vibefuzet (4).webp",
