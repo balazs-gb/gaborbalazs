@@ -393,7 +393,7 @@ const graphicDesign = [
   },
   {
     id: "editorial",
-    label: "Editorial works",
+    label: "Editorial Design",
     short: "Editorial",
     projects: [
       {
