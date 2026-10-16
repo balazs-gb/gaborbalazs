@@ -8,352 +8,168 @@
     <meta name="keywords" content="graphic design, visual art, motion design, films, photography, fine art, Gábor Balázs, visual artist, design portfolio">
     <meta name="author" content="Gábor Balázs">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/skills.css">
-    <link rel="stylesheet" href="styles/game-card.css">
+    <link rel="stylesheet" href="styles/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/progressbar.js@1.1.1/dist/progressbar.min.js"></script>
     <link rel="icon" type="image/x-icon" href="Images/logo-GB.svg">
-
   </head>
-  <body>
+  <body class="home">
     <nav class="menu">
       <a class="active" href="index.html">Home</a>
       <a href="Works.html">Works</a>
       <a href="Contact.html">Contact</a>
     </nav>
 
-    <div class="display-work">
-      <img class="work-sample" src="Images/lino1.webp" alt="work sample">
+    <div class="banner">
+      <img class="banner-img" src="Images/lino1.webp" alt="work sample">
     </div>
 
+    <main class="home-main">
 
-    <main class="main">
+      <!-- Photo + name -->
+      <section class="profile">
+        <img class="profile-photo" src="Images/me.webp" alt="Picture of Gábor Balázs">
 
-      <div class="home-div1">
-        <div class="home-d1-left">
-          <img class="pic-me" src="Images/me.webp" alt="Picture of Gábor Balázs">
-        </div>
-        <div class="home-d1-right">
-          <div class="h-d1-title"><a href="Contact.html" class="h-d1-link">Gábor Balázs</a></div>
-          <div class="h-d1-subtitle"><a href="Services.html" class="h-d1-link"><p>Graphic Designer and Visual Artist</p></a></div>
-          <div class="contact-info">
-            <div class="social-contact">
-              <div class="ig">
-                <a href="https://www.instagram.com/balazsgabor17/" target="_blank"><img src="Images/ig-icon@2x.png" class="ig-icon" alt="Instagram Icon"></a>
-              </div>
-              <div class="pexels">
-                <a href="https://www.pexels.com/@gaborbalazs97/" target="_blank"><img src="Images/Pexels.png" class="pexels-icon" alt="Pexels Icon"></a>
-              </div>
-            </div>
-            <div class="location">
-              <div class="loc-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 42 42"><path fill="#000000" fill-rule="evenodd" d="M33 13.924C33 6.893 27.594 1 20.51 1S8 6.897 8 13.93C8 16.25 8.324 18 9.423 20h-.021l10.695 20.621c.402.551.824-.032.824-.032C20.56 41.13 31.616 20 31.616 20h-.009C32.695 18 33 16.246 33 13.924zm-18.249-.396c0-3.317 2.579-6.004 5.759-6.004c3.179 0 5.76 2.687 5.76 6.004s-2.581 6.005-5.76 6.005c-3.18 0-5.759-2.687-5.759-6.005z"/></svg>
-              </div>
-              <div class="loc-text">
-                <a href="https://www.google.com/maps/place/T%C3%A2rgu+Secuiesc" target="_blank">Târgu Secuiesc</a>
-              </div>
-            </div>
+        <div class="profile-text">
+          <h1 class="profile-name"><a href="Contact.html">Gábor Balázs</a></h1>
+          <p class="profile-role"><a href="Services.html">Graphic Designer and Visual Artist</a></p>
+
+          <div class="profile-social">
+            <a href="https://www.instagram.com/balazsgabor17/" target="_blank" rel="noopener"><img src="Images/ig-icon@2x.png" alt="Instagram"></a>
+            <a href="https://www.pexels.com/@gaborbalazs97/" target="_blank" rel="noopener"><img src="Images/Pexels.png" alt="Pexels"></a>
+          </div>
+
+          <div class="profile-location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 42 42" aria-hidden="true"><path fill="#000000" fill-rule="evenodd" d="M33 13.924C33 6.893 27.594 1 20.51 1S8 6.897 8 13.93C8 16.25 8.324 18 9.423 20h-.021l10.695 20.621c.402.551.824-.032.824-.032C20.56 41.13 31.616 20 31.616 20h-.009C32.695 18 33 16.246 33 13.924zm-18.249-.396c0-3.317 2.579-6.004 5.759-6.004c3.179 0 5.76 2.687 5.76 6.004s-2.581 6.005-5.76 6.005c-3.18 0-5.759-2.687-5.759-6.005z"/></svg>
+            <a href="https://www.google.com/maps/place/T%C3%A2rgu+Secuiesc" target="_blank" rel="noopener">Târgu Secuiesc</a>
           </div>
         </div>
-      </div>  
+      </section>
 
-      <div class="home-div2">
-        <div class="home-d2-left">
-          <div class="education">
-            <p class="education-title">Education</p>
-            <ul class="edu-list">
-              <li>2019-2021:</li>
-              <li><strong>Babeș-Bolyai University,</strong></li>
-              <li><strong>Faculty of Theatre and Film,</strong></li>
-              <li><strong>The Art of Short Film MA,</strong></li>
-              <li><i>Cluj Napoca</i></li>
-            </ul>
-            <ul class="edu-list">
-              <li>2019-2021:</li>
-              <li><strong>Babeș-Bolyai University,</strong></li>
-              <li><strong>Faculty of History and Philosophy,</strong></li>
-              <li><strong>Critical Theory and Multicultural Studies MA,</strong></li>
-              <li><i>Cluj Napoca</i></li>
-            </ul>
-            <ul class="edu-list">
-              <li>2016-2019:</li>
-              <li><strong>Partium Christian University,</strong></li>
-              <li><strong>Faculty of Letters and Arts,</strong></li>
-              <li><strong>Fine Arts - Graphics BA,</strong></li>
-              <li><i>Oradea</i></li>
-            </ul>
-          </div>
+      <!-- Education / Work / Hobby project -->
+      <section class="info">
+
+        <div class="info-education">
+          <h2 class="info-title">Education</h2>
+          <ul class="timeline">
+            <li>2019-2021:</li>
+            <li><strong>Babeș-Bolyai University,</strong></li>
+            <li><strong>Faculty of Theatre and Film,</strong></li>
+            <li><strong>The Art of Short Film MA,</strong></li>
+            <li><i>Cluj Napoca</i></li>
+          </ul>
+          <!-- It is not in the new design. To show it again, remove the comment marks:
+          <ul class="timeline">
+            <li>2019-2021:</li>
+            <li><strong>Babeș-Bolyai University,</strong></li>
+            <li><strong>Faculty of History and Philosophy,</strong></li>
+            <li><strong>Critical Theory and Multicultural Studies MA,</strong></li>
+            <li><i>Cluj Napoca</i></li>
+          </ul>
+          -->
+          <ul class="timeline">
+            <li>2016-2019:</li>
+            <li><strong>Partium Christian University,</strong></li>
+            <li><strong>Faculty of Letters and Arts,</strong></li>
+            <li><strong>Fine Arts - Graphics BA,</strong></li>
+            <li><i>Oradea</i></li>
+          </ul>
         </div>
-        <div class="home-d2-right">
-          <div class="work">
-            <p class="work-title">Work</p>
-            <ul class="edu-list">
-              <li>2022 -</li>
-              <li><strong>Graphic Designer, Art Director</strong></li>
-              <li><strong><a href="https://diversityads.ro/" target="_blank">Diversity Advertising,</a></strong></li>
-              <li><i>Cluj Napoca</i></li>
-            </ul>
-            <ul class="edu-list">
-              <li>2019 -</li>
-              <li><strong>Visual Artist</strong></li>
-            </ul>
-            <ul class="edu-list">
-              <li>2023-2025:</li>
-              <li><strong>Trainer (Block coding with 8-12 years old),</strong></li>
-              <li><strong><a href="https://www.logiscool.com/" target="_blank">Logiscool,</a></strong></li>
-              <li><i>Târgu Secuiesc</i></li>
-            </ul>
-            <ul class="edu-list">
-              <li>2021:</li>
-              <li><strong>Shadow Animator,</strong></li>
-              <li><strong><a href="https://whiteplasticsky.com/" target="_blank">White Plastic Sky,</a></strong></li>
-              <li><i>Animated Feature Film, Hungary</i></li>
-            </ul>
-            <ul class="edu-list">
-              <li>2021-2022:</li>
-              <li><strong>Teacher (Fine Arts - Graphics),</strong></li>
-              <li><strong><a href="https://sites.google.com/nmg.ro/nmgro/start" target="_blank">Nagy Mózes Főgimnázium,</a></strong></li>
-              <li><i>Târgu Secuiesc</i></li>
-            </ul>
-            <ul class="edu-list">
-              <li>Fine art group exhibitions:</li>
-              <li><strong>Incitato Art Camp</strong><i> 2013-2026</i></li>
-              <li><strong>Ünnepi Tárlat (March 15.th theme)</strong> <i>2022-2026</i></li>
-              <li><strong>Hatvan és Kézdivásárhely</strong> <i>2023</i></li>
-            </ul>
-          </div>
+
+        <div class="info-work">
+          <h2 class="info-title">Work</h2>
+          <ul class="timeline">
+            <li>2022 -</li>
+            <li><strong>Graphic Designer, Art Director</strong></li>
+            <li><strong><a href="https://diversityads.ro/" target="_blank" rel="noopener">Diversity Advertising,</a></strong></li>
+            <li><i>Cluj Napoca</i></li>
+          </ul>
+          <ul class="timeline">
+            <li>2019 -</li>
+            <li><strong>Visual Artist</strong></li>
+          </ul>
+          <ul class="timeline">
+            <li>2023-2025:</li>
+            <li><strong>Trainer (Block coding with 8-12 years old),</strong></li>
+            <li><strong><a href="https://www.logiscool.com/" target="_blank" rel="noopener">Logiscool,</a></strong></li>
+            <li><i>Târgu Secuiesc</i></li>
+          </ul>
+          <ul class="timeline">
+            <li>2021:</li>
+            <li><strong>Shadow Animator,</strong></li>
+            <li><strong><a href="https://whiteplasticsky.com/" target="_blank" rel="noopener">White Plastic Sky,</a></strong></li>
+            <li><i>Animated Feature Film, Hungary</i></li>
+          </ul>
+          <ul class="timeline">
+            <li>2021-2022:</li>
+            <li><strong>Teacher (Fine Arts - Graphics),</strong></li>
+            <li><strong><a href="https://sites.google.com/nmg.ro/nmgro/start" target="_blank" rel="noopener">Nagy Mózes Főgimnázium,</a></strong></li>
+            <li><i>Târgu Secuiesc</i></li>
+          </ul>
+          <ul class="timeline">
+            <li>Fine art group exhibitions:</li>
+            <li><strong>Incitato Art Camp</strong><i> 2013-2026</i></li>
+            <li><strong>Ünnepi Tárlat (March 15.th theme)</strong> <i>2022-2026</i></li>
+            <li><strong>Hatvan és Kézdivásárhely</strong> <i>2023</i></li>
+          </ul>
         </div>
-      </div>
 
-      <div class="home-div3">
-        
-        <div class="skill-title">Skill set</div>
-
-        <div class="all-skills">
-
-          <div class="all-softwares">
-            
-            <div class="softwares-title">Softwares:</div>
-
-            <div class="skillclass" id="skills">
-              <a data-software="Adobe Illustrator"><div class="circle-wrapper" id="circle1"></div></a>
-              <a data-software="Adobe Photoshop"><div class="circle-wrapper" id="circle2"></div></a>
-              <a data-software="Adobe After Effects"><div class="circle-wrapper" id="circle3"></div></a>
-              <a data-software="Adobe Indesign"><div class="circle-wrapper" id="circle4"></div></a>
-              <a data-software="Adobe Audition"><div class="circle-wrapper" id="circle5"></div></a>
-              <a data-software="Adobe Lightroom"><div class="circle-wrapper" id="circle6"></div></a>
-              <a data-software="Adobe Animate"><div class="circle-wrapper" id="circle11"></div></a>
-              <a data-software="Adobe Fresco"><div class="circle-wrapper" id="circle14"></div></a>
-              <a data-software="Figma"><div class="circle-wrapper" id="circle7"></div></a>
-              <a data-software="Affinity"><div class="circle-wrapper" id="circle16"></div></a>
-              <a data-software="Davinci Resolve"><div class="circle-wrapper" id="circle8"></div></a>
-              <a data-software="Blender"><div class="circle-wrapper" id="circle9"></div></a>
-              <a data-software="Font Forge"><div class="circle-wrapper" id="circle10"></div></a>
-              <a data-software="Visual Studio Code"><div class="circle-wrapper" id="circle12"></div></a>
-              <a data-software="TV Paint"><div class="circle-wrapper" id="circle13"></div></a>
-              <a data-software="Microsoft Office"><div class="circle-wrapper" id="circle15"></div></a>
-            </div>
-            </div>
-
-          <div class="all-abilities"> 
-
-            <div class="ability-title">Abilities:</div>
-
-            <div class="linebar-grid">
-                        <div class="line-item">
-                    <span class="line-label">Brand and Logo Design</span>
-                    <div id="line1" class="line-bar-container"></div>
-                </div>
-                <div class="line-item">
-                    <span class="line-label">UI Design</span>
-                    <div id="line2" class="line-bar-container"></div>
-                </div>
-                <div class="line-item">
-                    <span class="line-label">Motion Graphics and Video Editing</span>
-                    <div id="line3" class="line-bar-container"></div>
-                </div>
-                <div class="line-item">
-                    <span class="line-label">Editorial works</span>
-                    <div id="line4" class="line-bar-container"></div>
-                </div>
-                <div class="line-item">
-                    <span class="line-label">Typeface Design</span>
-                    <div id="line5" class="line-bar-container"></div>
-                </div>
-                <div class="line-item">
-                    <span class="line-label">Website</span>
-                    <div id="line6" class="line-bar-container"></div>
-                </div>
-                <div class="line-item">
-                    <span class="line-label">3D modeling</span>
-                    <div id="line7" class="line-bar-container"></div>
-                </div>
-            </div>
-          </div> 
-        </div>
-        
-      </div>
-
-      <div class="home-div4">
-        <div class="hobby-title">Hobby project:</div>
-        <div>
+        <div class="info-hobby">
+          <h2 class="info-title">Hobby project</h2>
           <section class="game-card">
             <a class="game-card__art" href="https://balazs-gb.github.io/blackninjacowboy/" aria-label="Black Ninja Cowboy — visit the game's website">
               <img src="Images/publishing materialfull-15 copy.webp" alt="Black Ninja Cowboy cover art">
             </a>
 
             <div class="game-card__body">
-              <div class="game-card__title-row">
-                <a class="game-card__title" href="https://balazs-gb.github.io/blackninjacowboy/">Black Ninja Cowboy</a>
-
-                <span class="game-card__platform-icons" aria-hidden="true">
-                  <!-- Windows (Microsoft Store) -->
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 2.3 6.5 1.4v6.1H0V2.3Zm7.3-1 8.7-1.3v7.1H7.3V1.3ZM0 8.5h6.5v6.2L0 13.7V8.5Zm7.3 0H16v7.2l-8.7-1.3V8.5Z"/></svg>
-                  <!-- Google Play -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l0 6" /><path d="M20 10l0 6" /><path d="M7 9h10v8a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-8a5 5 0 0 1 10 0" /><path d="M8 3l1 2" />  <path d="M16 3l-1 2" /><path d="M9 18l0 3" /><path d="M15 18l0 3" /></svg>
-                </span>
-              </div>
-
+              <a class="game-card__title" href="https://balazs-gb.github.io/blackninjacowboy/">Black Ninja Cowboy</a>
               <p class="game-card__tagline">Bullet-hell, roguelike, pixel art video game.</p>
 
               <div class="game-card__actions">
-                <a class="game-card__btn" href="https://apps.microsoft.com/detail/9PL0VPPNLCRF">
+                <a class="game-card__btn" href="https://apps.microsoft.com/detail/9PL0VPPNLCRF" target="_blank" rel="noopener">
+                  <!-- Windows -->
                   <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 2.3 6.5 1.4v6.1H0V2.3Zm7.3-1 8.7-1.3v7.1H7.3V1.3ZM0 8.5h6.5v6.2L0 13.7V8.5Zm7.3 0H16v7.2l-8.7-1.3V8.5Z"/></svg>
                   Microsoft Store
                 </a>
-                <a class="game-card__btn" href="https://play.google.com/store/apps/details?id=balazs_g.blackninjacowboy">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l0 6" /><path d="M20 10l0 6" /><path d="M7 9h10v8a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-8a5 5 0 0 1 10 0" /><path d="M8 3l1 2" />  <path d="M16 3l-1 2" /><path d="M9 18l0 3" /><path d="M15 18l0 3" /></svg>
-                  Google Play
+                <a class="game-card__btn" href="https://play.google.com/store/apps/details?id=balazs_g.blackninjacowboy" target="_blank" rel="noopener">
+                  <!-- Android -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10l0 6"/><path d="M20 10l0 6"/><path d="M7 9h10v8a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-8a5 5 0 0 1 10 0"/><path d="M8 3l1 2"/><path d="M16 3l-1 2"/><path d="M9 18l0 3"/><path d="M15 18l0 3"/></svg>
+                  Play Store
                 </a>
-                <a class="game-card__btn" href="https://balazs-g.itch.io/black-ninja-cowboy">
-                  <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.4 2.1C2.3 1.2 3.6.7 4.9.7h6.2c1.3 0 2.6.5 3.5 1.4l.9 1c.8.8.5 2.6-.5 3.2-.5.3-1.1.5-1.7.5-.8 0-1.6-.3-2.1-.9-.5.6-1.3.9-2.1.9-.8 0-1.6-.3-2.1-.9-.5.6-1.3.9-2.1.9-.8 0-1.6-.3-2.1-.9-.6.6-1.3.9-2.1.9-.6 0-1.2-.2-1.7-.5-1-.6-1.3-2.4-.5-3.2l.9-1Zm.6 5.1c.5.2 1 .3 1.6.3.7 0 1.4-.2 2-.5.6.3 1.3.5 2 .5.7 0 1.4-.2 2-.5.6.3 1.3.5 2 .5.6 0 1.1-.1 1.6-.3l-.5 5.9c-.1 1-.9 1.8-1.9 1.8h-1.2v-3.2c0-.6-.5-1.1-1.1-1.1h-1.6c-.6 0-1.1.5-1.1 1.1v3.2H4.5c-1 0-1.8-.8-1.9-1.8l-.6-5.9Z"/></svg>
+                <a class="game-card__btn" href="https://balazs-g.itch.io/black-ninja-cowboy" target="_blank" rel="noopener">
+                  <!-- itch.io (shop with awning) -->
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4.6 2h14.8L23 7.2A2.75 2.75 0 0 1 17.5 7.2A2.75 2.75 0 0 1 12 7.2A2.75 2.75 0 0 1 6.5 7.2A2.75 2.75 0 0 1 1 7.2ZM3.2 10.8V20a2 2 0 0 0 2 2H9.5V17a2.5 2.5 0 0 1 5 0V22H18.8a2 2 0 0 0 2-2V10.8Z"/></svg>
                   Itch.io
                 </a>
               </div>
             </div>
           </section>
         </div>
-      </div>
+
+      </section>
+
+      <!-- Skills (filled in from scripts/skills-data.js) -->
+      <section class="skills">
+        <h2 class="skills-title">Skills set</h2>
+
+        <h3 class="skills-subtitle">Software</h3>
+        <div class="software-grid" id="software-grid"></div>
+
+        <h3 class="skills-subtitle skills-subtitle--abilities">Abilities:</h3>
+        <div class="ability-list" id="ability-list"></div>
+      </section>
 
     </main>
-
-  <script>
-      // --- Configuration Data ---
-
-      // Configurations for your 9 Circle Progress Bars
-      const progressConfigs = [
-          { id: 'circle1', text: 'Ai', progress: 0.99 },
-          { id: 'circle2', text: 'Ps', progress: 0.9 },
-          { id: 'circle3', text: 'Ae', progress: 0.85 },
-          { id: 'circle4', text: 'Id', progress: 0.80 },
-          { id: 'circle5', text: 'Au', progress: 0.75 },
-          { id: 'circle6', text: 'Lr', progress: 0.80 },
-          { id: 'circle11', text: 'An', progress: 0.7 },
-          { id: 'circle14', text: 'Fr', progress: 0.80 },
-          { id: 'circle7', text: 'Figma', progress: 0.8 },
-          { id: 'circle8', text: 'Davinci', progress: 0.75 },
-          { id: 'circle9', text: 'Blender', progress: 0.40 },
-          { id: 'circle10', text: 'Font Forge', progress: 0.55 },
-          { id: 'circle16', text: 'Affinity', progress: 0.65 },
-          { id: 'circle12', text: 'VS Code', progress: 0.15 },
-          { id: 'circle13', text: 'TV Paint', progress: 0.40 },
-          { id: 'circle15', text: 'MS Office', progress: 0.90 },
-      ];
-      
-      // Configurations for 6 Line Progress Bars
-      const lineConfigs = [
-          { id: 'line1', progress: 0.99 }, 
-          { id: 'line2', progress: 0.95 }, 
-          { id: 'line3', progress: 0.90 }, 
-          { id: 'line4', progress: 0.85 }, 
-          { id: 'line5', progress: 0.70 }, 
-          { id: 'line6', progress: 0.55 }, 
-          { id: 'line7', progress: 0.40 }  
-      ];
-        
-      // Animation Parameters
-      const animationDuration = 2000; // 2 seconds for the fill animation
-      const delayBetweenBars = 100;   // 100 milliseconds delay between each circle starting
-
-    
-      // --- 1. Create and Animate the Circle Bars (Softwares) ---
-      progressConfigs.forEach((config, index) => {
-          const circleBar = new ProgressBar.Circle(`#${config.id}`, {
-              color: "#5000D2",       
-              strokeWidth: 8,
-              linecap: "round",
-              trailWidth: 15,
-              trailColor: "#F5F5F5",  
-              easing: "easeInOut",
-              from: { color: "#5000D2", width: 8 },
-              to: { color: "#5000D2", width: 8 },
-              text: {
-                  value: config.text, // Text remains static and centered
-                  className: 'progress-text',
-                  style: {
-                      color: 'black',
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      padding: 0,
-                      margin: 0,
-                      transform: 'translate(-50%, -50%)', 
-                      'line-height': '0.9rem',
-                  }
-              },
-          });
-
-          const calculatedDelay = index * delayBetweenBars;
-
-          circleBar.animate(config.progress, { 
-              duration: animationDuration,
-              delay: calculatedDelay
-          });
-      });
-      
-      // --- 2. Create and Animate the Line Bars (Abilities) ---
-
-      const lineBarStartTime = (progressConfigs.length * delayBetweenBars) + 500; 
-
-      lineConfigs.forEach((config, index) => {
-          const lineBar = new ProgressBar.Line(`#${config.id}`, {
-              // Your CSS sets height to 8px, so we'll use that for thickness
-              strokeWidth: 8,
-              linecap: "round",
-              trailWidth: 8, 
-              easing: 'easeInOut',
-              duration: animationDuration,
-              color: '#5000D2',
-              trailColor: '#F5F5F5',
-              // Ensure the SVG fills its container
-              svgStyle: { width: '100%', height: '100%' }, 
-            
-              // since you only want the bar animation.
-              text: {
-                  value: null,
-                  className: 'progress-text',
-                  style: {}
-              },
-              
-          });
-
-          const calculatedDelay = lineBarStartTime + (index * 150);
-
-          lineBar.animate(config.progress, { 
-              duration: animationDuration,
-              delay: calculatedDelay
-          });
-      });
-
-  </script>
 
     <footer>
       <div class="footer">
         <p>&copy; 2026 Gábor Balázs. All rights reserved.</p>
       </div>
     </footer>
-  </body>
 
+    <script src="https://cdn.jsdelivr.net/npm/progressbar.js@1.1.1/dist/progressbar.min.js"></script>
+    <script src="scripts/skills-data.js"></script>
+    <script src="scripts/home.js"></script>
+  </body>
 </html>
