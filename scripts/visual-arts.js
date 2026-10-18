@@ -16,6 +16,13 @@
   if (!page || page < 1) page = 1;
   if (page > totalPages) page = totalPages;
 
+  // every page of the gallery gets its own address and title (for Google)
+  if (page > 1) {
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.href = canonical.href.split('?')[0] + '?page=' + page;
+    document.title = 'Visual Arts (page ' + page + ') – Gábor Balázs';
+  }
+
   function el(tag, className, text) {
     const node = document.createElement(tag);
     if (className) node.className = className;
