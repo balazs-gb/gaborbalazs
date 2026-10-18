@@ -1,13 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gaborbalazs97.github.io/gaborbalazs/</loc>
-    <lastmod>2025-11-10</lastmod>
+    <loc>https://balazs-gb.github.io/gaborbalazs/</loc>
+    <lastmod>2026-10-18</lastmod>
   </url>
   <url>
-    <loc>https://gaborbalazs97.github.io/gaborbalazs/portfolio.html</loc>
+    <loc>https://balazs-gb.github.io/gaborbalazs/Works.html</loc>
+    <lastmod>2026-10-18</lastmod>
   </url>
   <url>
-    <loc>https://gaborbalazs97.github.io/gaborbalazs/contact.html</loc>
+    <loc>https://balazs-gb.github.io/gaborbalazs/Services.html</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
+    <loc>https://balazs-gb.github.io/gaborbalazs/visual-arts.html</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
+    <loc>https://balazs-gb.github.io/gaborbalazs/films.html</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
+    <loc>https://balazs-gb.github.io/gaborbalazs/photo.html</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
+    <loc>https://balazs-gb.github.io/gaborbalazs/Contact.html</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
+    <loc>https://balazs-gb.github.io/gaborbalazs/graphic-design-pages/branding.html</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
+    <loc>https://balazs-gb.github.io/gaborbalazs/graphic-design-pages/logo.html</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
+    <loc>https://balazs-gb.github.io/gaborbalazs/graphic-design-pages/social.html</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
+    <loc>https://balazs-gb.github.io/gaborbalazs/graphic-design-pages/motion.html</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
+    <loc>https://balazs-gb.github.io/gaborbalazs/graphic-design-pages/uidesign.html</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
+    <loc>https://balazs-gb.github.io/gaborbalazs/graphic-design-pages/editorial.html</loc>
+    <lastmod>2026-10-18</lastmod>
   </url>
 </urlset>
