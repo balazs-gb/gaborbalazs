@@ -293,7 +293,7 @@ body.home {
 
 .circle-wrapper .progress-text {
   font-size: calc(var(--circle) * 0.17);
-  font-weight: 600;
+  font-weight: 800;
   line-height: 1.05;
   text-align: center;
   color: #000;
@@ -344,12 +344,12 @@ body.home {
   display: block;
   margin-bottom: 4px;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 700;
   transition: font-weight 0.3s cubic-bezier(.42, 0, .44, 1.68);
 }
 
 .ability-label:hover {
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .ability-bar {
@@ -364,11 +364,11 @@ body.home {
 /* ---------- Phones / small screens ---------- */
 @media (max-width: 720px) {
   .home-main {
+    --photo: min(300px, 72vw);   /* width of the photo, also used to line up the text below it */
     padding: 0 16px;
   }
 
   .profile {
-    --photo: min(300px, 72vw);
     grid-template-columns: 1fr;
     justify-items: center;
     row-gap: 20px;
@@ -397,10 +397,12 @@ body.home {
       "hobby";
     grid-template-rows: auto;
     margin-top: 40px;
+    margin-left: calc((100% - var(--photo)) / 2);   /* left edge = left edge of the photo */
   }
 
   .info-hobby {
     margin-top: 10px;
+    max-width: var(--photo);       /* right edge = right edge of the photo */
   }
 
   .game-card__art {
@@ -410,10 +412,14 @@ body.home {
 
   .skills {
     margin-top: 60px;
+    /* skill set between the left and right edge of the photo
+       (delete the next line to let it use the full page width again) */
+    margin-left: calc((100% - var(--photo)) / 2);
+    margin-right: calc((100% - var(--photo)) / 2);
   }
 
   .software-grid {
-    --circle: 64px;
+    --circle: min(64px, calc((var(--photo) - 24px) / 4));   /* 4 circles always fit in the photo's width */
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     row-gap: 22px;
