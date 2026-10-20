@@ -218,7 +218,7 @@ body.home {
   border-radius: 6px;
   background: var(--chip);
   color: #000;
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 600;
   white-space: nowrap;
   transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
@@ -407,7 +407,11 @@ body.home {
 
   .game-card__art {
     width: 100px;
-    height: 100px;
+    height: 170px;
+  }
+
+  .game-card__btn {
+    font-size: 0.82rem;
   }
 
   .skills {
